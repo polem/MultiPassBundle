@@ -1,0 +1,13 @@
+{
+    "name": "polem/MultiPassBundle",
+    "description": "A kick-ass  Symfony Bundle to connect to third-party application based on Keeguon multipass library",
+    "authors": [
+        {
+            "name": "Paul-Emile MINY",
+            "email": "paulemile.miny@gmail.com"
+        }
+    ],
+    "require": {
+        "multipass/multipass": ">=1.0.0"
+    }
+}
