@@ -18,7 +18,8 @@ class MultipassFactory implements SecurityFactoryInterface
             ->replaceArgument(0, new Reference($userProvider))
         ;
 
-        $listenerId = 'security.authentication.listener.multipass.'.$id;
+        $listenerId = 'security.authentication.listener.multipass.' . $id;
+
         $listener = $container->setDefinition($listenerId, new DefinitionDecorator('multipass.security.authentication.listener'));
 
         return array($providerId, $listenerId, $defaultEntryPoint);
@@ -35,5 +36,7 @@ class MultipassFactory implements SecurityFactoryInterface
     }
 
     public function addConfiguration(NodeDefinition $node)
-    {}
+    {
+        parent::addConfiguration($node);
+    }
 }
