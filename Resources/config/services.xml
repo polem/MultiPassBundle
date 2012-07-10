@@ -16,5 +16,16 @@
             </call>-->
             <call method="register" />
         </service>
+
+        <service id="multipass.security.authentication.provider"
+            class="Polem\MultipassBundle\Security\Authentication\Provider\LultipassProvider" public="false">
+            <argument /> <!-- User Provider -->
+        </service>
+
+        <service id="multipass.security.authentication.listener"
+            class="Polem\MultipassBundle\Security\Firewall\MultipassListener" public="false">
+            <argument type="service" id="security.context"/>
+            <argument type="service" id="security.authentication.manager" />
+        </service>
     </services>
 </container>
