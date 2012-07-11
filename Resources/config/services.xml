@@ -10,15 +10,8 @@
     </parameters>
 
     <services>
-        <service id="multipass" class="%multipass.class%" factory-class="%multipass_factory.class%" factory-method="getInstance">
-            <!--<call method="registerConfigs">
-                <argument type="service" id="my_mailer" />
-            </call>-->
-            <call method="register" />
-        </service>
-
         <service id="multipass.security.authentication.provider"
-            class="Polem\MultipassBundle\Security\Authentication\Provider\LultipassProvider" public="false">
+            class="Polem\MultipassBundle\Security\Authentication\Provider\MultiPassProvider" public="false">
             <argument /> <!-- User Provider -->
         </service>
 
@@ -27,5 +20,34 @@
             <argument type="service" id="security.context"/>
             <argument type="service" id="security.authentication.manager" />
         </service>
+
+        <service id="multipass.startegy.oauth"
+            class="MultiPass\Strategies\Oauth"
+            public="false" />
+
+        <service id="multipass.startegy.oauth2"
+            class="MultiPass\Strategies\Oauth2"
+            public="false" />
+
+        <service id="multipass.startegy.github"
+            class="MultiPass\Strategies\Github"
+            public="false" />
+
+        <service id="multipass.startegy.facebook"
+            class="MultiPass\Strategies\Facebook"
+            public="false" />
+
+        <service id="multipass.startegy.google"
+            class="MultiPass\Strategies\Google"
+            public="false" />
+
+        <service id="multipass.startegy.linkedin"
+            class="MultiPass\Strategies\LinkedIn"
+            public="false" />
+
+        <service id="multipass.startegy.twitter"
+            class="MultiPass\Strategies\Twitter"
+            public="false" />
+
     </services>
 </container>
