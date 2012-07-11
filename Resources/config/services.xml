@@ -4,19 +4,14 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
-    <parameters>
-        <parameter key="multipass.class">Multipass\Configuration</parameter>
-        <parameter key="multipass_factory.class">Multipass\Configuration</parameter>
-    </parameters>
-
     <services>
         <service id="multipass.security.authentication.provider"
-            class="Polem\MultipassBundle\Security\Authentication\Provider\MultiPassProvider" public="false">
+            class="Polem\MultiPassBundle\Security\Authentication\Provider\MultiPassProvider" public="false">
             <argument /> <!-- User Provider -->
         </service>
 
         <service id="multipass.security.authentication.listener"
-            class="Polem\MultipassBundle\Security\Firewall\MultipassListener" public="false">
+            class="Polem\MultiPassBundle\Security\Firewall\MultiPassListener" public="false">
             <argument type="service" id="security.context"/>
             <argument type="service" id="security.authentication.manager" />
         </service>

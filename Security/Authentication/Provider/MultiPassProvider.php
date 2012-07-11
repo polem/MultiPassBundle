@@ -1,14 +1,14 @@
 <?php
 
-namespace Polem\MultipassBundle\Security\Authentication\Provider;
+namespace Polem\MultiPassBundle\Security\Authentication\Provider;
 
 use Symfony\Component\Security\Core\Authentication\Provider\AuthenticationProviderInterface;
 use Symfony\Component\Security\Core\User\UserProviderInterface;
 use Symfony\Component\Security\Core\Exception\AuthenticationException;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
-use Acme\DemoBundle\Security\Authentication\Token\MultipassToken;
+use Acme\DemoBundle\Security\Authentication\Token\MultiPassToken;
 
-class MultipassProvider implements AuthenticationProviderInterface
+class MultiPassProvider implements AuthenticationProviderInterface
 {
     private $userProvider;
 
@@ -22,7 +22,7 @@ class MultipassProvider implements AuthenticationProviderInterface
         $user = $this->userProvider->loadUserByUsername($token->getUsername());
 
         if ($user) {
-            $authenticatedToken = new MultipassToken($user->getRoles());
+            $authenticatedToken = new MultiPassToken($user->getRoles());
             $authenticatedToken->setUser($user);
 
             return $authenticatedToken;

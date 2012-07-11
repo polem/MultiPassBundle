@@ -6,7 +6,7 @@ use Symfony\Component\Security\Core\Authentication\Token\AbstractToken;
 
 use MultiPass\AuthHash;
 
-class MultipassToken extends AbstractToken
+class MultiPassToken extends AbstractToken
 {
     protected $authHash;
 
