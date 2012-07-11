@@ -6,7 +6,7 @@ use Symfony\Component\Security\Core\Authentication\Provider\AuthenticationProvid
 use Symfony\Component\Security\Core\User\UserProviderInterface;
 use Symfony\Component\Security\Core\Exception\AuthenticationException;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
-use Acme\DemoBundle\Security\Authentication\Token\MultiPassToken;
+use Polem\MultiPassBundle\Security\Authentication\Token\MultiPassToken;
 
 class MultiPassProvider implements AuthenticationProviderInterface
 {
@@ -33,6 +33,6 @@ class MultiPassProvider implements AuthenticationProviderInterface
 
     public function supports(TokenInterface $token)
     {
-        return $token instanceof MultipassToken;
+        return $token instanceof MultiPassToken;
     }
 }
